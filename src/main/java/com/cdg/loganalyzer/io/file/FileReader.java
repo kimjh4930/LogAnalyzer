@@ -31,7 +31,9 @@ public class FileReader implements Reader {
   }
 
   private void open() throws IOException {
-    this.reader = new BufferedReader(new java.io.FileReader(fileName));
+    if(reader == null) {
+      this.reader = new BufferedReader(new java.io.FileReader(fileName));
+    }
   }
 
   @Override
